@@ -19,14 +19,14 @@ function useNotes() {
     setNotes(prev => [newNote, ...prev]);
   };
 
-  const deleteNote = (id) => {
+  const deleteNote = id => {
     setNotes(prev => prev.filter(note => note.id !== id));
   };
 
   const editNote = (id, updatedNote) => {
-    setNotes(prev => prev.map(note => 
-      note.id === id ? { ...note, ...updatedNote } : note
-    ));
+    setNotes(prev =>
+      prev.map(note => (note.id === id ? { ...note, ...updatedNote } : note))
+    );
   };
 
   return { notes, addNote, deleteNote, editNote };

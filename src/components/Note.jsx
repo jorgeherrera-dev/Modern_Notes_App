@@ -26,26 +26,26 @@ function Note({ note }) {
         <div className="p-5">
           <input
             value={editTitle}
-            onChange={(e) => setEditTitle(e.target.value)}
+            onChange={e => setEditTitle(e.target.value)}
             className="w-full px-3 py-2 mb-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
             placeholder="Título..."
           />
           <textarea
             value={editContent}
-            onChange={(e) => setEditContent(e.target.value)}
+            onChange={e => setEditContent(e.target.value)}
             className="w-full px-3 py-2 mb-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none resize-none"
             rows="3"
             placeholder="Contenido..."
           />
           <div className="flex gap-2">
-            <button 
+            <button
               onClick={handleSave}
               disabled={!editTitle.trim() || !editContent.trim()}
               className="flex-1 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors"
             >
               💾 Guardar
             </button>
-            <button 
+            <button
               onClick={handleCancel}
               className="flex-1 bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-lg text-sm font-medium transition-colors"
             >
@@ -62,17 +62,15 @@ function Note({ note }) {
             {note.content}
           </p>
           <div className="flex justify-between items-center pt-4 border-t border-gray-100">
-            <span className="text-sm text-gray-500">
-              {note.createdAt}
-            </span>
+            <span className="text-sm text-gray-500">{note.createdAt}</span>
             <div className="flex gap-2">
-              <button 
+              <button
                 onClick={() => setIsEditing(true)}
                 className="bg-blue-100 hover:bg-blue-200 text-blue-700 py-1 px-3 rounded-lg text-xs font-medium transition-colors"
               >
                 ✏️ Editar
               </button>
-              <button 
+              <button
                 onClick={() => deleteNote(note.id)}
                 className="bg-red-100 hover:bg-red-200 text-red-700 py-1 px-3 rounded-lg text-xs font-medium transition-colors"
               >

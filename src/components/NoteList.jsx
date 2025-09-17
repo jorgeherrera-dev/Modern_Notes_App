@@ -20,7 +20,7 @@ function NoteList() {
 
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {notes.map((note) => (
+      {notes.map(note => (
         <Note key={note.id} note={note} />
       ))}
     </div>
